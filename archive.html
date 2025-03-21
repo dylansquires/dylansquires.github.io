@@ -16,19 +16,30 @@
             const response = await fetch('archive.tsv');
             const data = await response.text();
             let rows = data.split('\n').slice(1);
+            let ascending = { date: true, title: true, type: true };
             
             function renderTable(sortedRows) {
                 let tableHTML = '';
                 sortedRows.forEach(row => {
-                    const [date, title, content, type] = row.split('\t');
-                    tableHTML += `<tr><td>${date}</td><td><a href="display.html?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}&content=${encodeURIComponent(content)}">${title}</a></td><td>${type}</td></tr>`;
+                    const [date, title, , type] = row.split('\t');
+                    tableHTML += `<tr><td>${date}</td><td><a href="display.html?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}">${title}</a></td><td>${type}</td></tr>`;
                 });
                 document.getElementById('archive-entries').innerHTML = tableHTML;
             }
             
-            document.getElementById('sort-date').onclick = () => renderTable(rows.sort());
-            document.getElementById('sort-title').onclick = () => renderTable(rows.sort((a, b) => a.split('\t')[1].localeCompare(b.split('\t')[1])));
-            document.getElementById('sort-type').onclick = () => renderTable(rows.sort((a, b) => a.split('\t')[3].localeCompare(b.split('\t')[3])));
+            function sortTable(columnIndex, key) {
+                ascending[key] = !ascending[key];
+                rows.sort((a, b) => {
+                    let valA = a.split('\t')[columnIndex];
+                    let valB = b.split('\t')[columnIndex];
+                    return ascending[key] ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                });
+                renderTable(rows);
+            }
+            
+            document.getElementById('sort-date').onclick = () => sortTable(0, 'date');
+            document.getElementById('sort-title').onclick = () => sortTable(1, 'title');
+            document.getElementById('sort-type').onclick = () => sortTable(3, 'type');
             renderTable(rows);
         }
         window.onload = loadArchive;
