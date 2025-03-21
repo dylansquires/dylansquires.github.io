@@ -8,16 +8,24 @@
         .search-bar { margin-left: auto; }
         .content { padding: 20px; }
     </style>
+    <script>
+        function loadPoem() {
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById('poem-title').textContent = urlParams.get('title');
+            document.getElementById('poem-date').textContent = urlParams.get('date');
+            document.getElementById('poem-content').textContent = urlParams.get('content');
+        }
+        window.onload = loadPoem;
+    </script>
 </head>
 <body>
     <div class="banner">
-        <a href="index.html">Home</a> | <a href="display.html">Display</a> | <a href="archive.html">Archive</a>
-        <input type="text" class="search-bar" placeholder="Search...">
+        <a href="index.html">Home</a> | <a href="archive.html">Archive</a>
     </div>
     <div class="content">
-        <h2 id="poem-title">Poem Title</h2>
-        <p id="poem-date">Poem Date</p>
-        <p id="poem-content">Poem Content</p>
+        <h2 id="poem-title"></h2>
+        <p id="poem-date"></p>
+        <p id="poem-content"></p>
     </div>
 </body>
 </html>
