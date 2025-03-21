@@ -18,15 +18,16 @@
             let recentHTML = '';
             let archiveArray = [];
             rows.reverse().slice(0, 4).forEach(row => {
-                const [date, title, content, type] = row.split('\t');
-                recentHTML += `<p><a href="display.html?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}&content=${encodeURIComponent(content)}">` +
+                const [date, title] = row.split('\t');
+                recentHTML += `<p><a href="display.html?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}">` +
                               `<strong>${title}</strong> (${date})</a></p>`;
-                archiveArray.push({ date, title, content, type });
+                archiveArray.push({ date, title });
             });
             document.getElementById('recent-poems').innerHTML = recentHTML;
             
             let randomPoem = archiveArray[Math.floor(Math.random() * archiveArray.length)];
-            document.getElementById('random-archive').innerHTML = `<p><strong>${randomPoem.title}</strong> (${randomPoem.date})</p>`;
+            document.getElementById('random-archive').innerHTML = `<p><a href="display.html?title=${encodeURIComponent(randomPoem.title)}&date=${encodeURIComponent(randomPoem.date)}">` +
+                                                                   `<strong>${randomPoem.title}</strong> (${randomPoem.date})</a></p>`;
         }
         window.onload = loadPoems;
     </script>
