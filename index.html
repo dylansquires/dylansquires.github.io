@@ -11,14 +11,14 @@
     </style>
     <script>
         async function loadPoems() {
-            const response = await fetch('archive.csv');
+            const response = await fetch('archive.tsv');
             const data = await response.text();
             const rows = data.split('\n').slice(1);
             
             let recentHTML = '';
             let archiveArray = [];
             rows.reverse().slice(0, 4).forEach(row => {
-                const [date, title, content, type] = row.split(',');
+                const [date, title, content, type] = row.split('\t');
                 recentHTML += `<p><strong>${title}</strong> (${date})</p>`;
                 archiveArray.push({ date, title, content, type });
             });
