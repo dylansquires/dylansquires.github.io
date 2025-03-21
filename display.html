@@ -13,7 +13,6 @@
             const urlParams = new URLSearchParams(window.location.search);
             document.getElementById('poem-title').textContent = urlParams.get('title');
             document.getElementById('poem-date').textContent = urlParams.get('date');
-            document.getElementById('poem-content').textContent = urlParams.get('content');
         }
         window.onload = loadPoem;
     </script>
@@ -25,7 +24,6 @@
     <div class="content">
         <h2 id="poem-title"></h2>
         <p id="poem-date"></p>
-        <p id="poem-content"></p>
     </div>
 </body>
 </html>
