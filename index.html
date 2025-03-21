@@ -1,3 +1,4 @@
+/* landing.html */
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,26 @@
         .container { display: flex; justify-content: space-between; padding: 20px; }
         .tile { border: 1px solid black; padding: 10px; width: 45%; }
     </style>
+    <script>
+        async function loadPoems() {
+            const response = await fetch('archive.csv');
+            const data = await response.text();
+            const rows = data.split('\n').slice(1);
+            
+            let recentHTML = '';
+            let archiveArray = [];
+            rows.reverse().slice(0, 4).forEach(row => {
+                const [date, title, content, type] = row.split(',');
+                recentHTML += `<p><strong>${title}</strong> (${date})</p>`;
+                archiveArray.push({ date, title, content, type });
+            });
+            document.getElementById('recent-poems').innerHTML = recentHTML;
+            
+            let randomPoem = archiveArray[Math.floor(Math.random() * archiveArray.length)];
+            document.getElementById('random-archive').innerHTML = `<p><strong>${randomPoem.title}</strong> (${randomPoem.date})</p>`;
+        }
+        window.onload = loadPoems;
+    </script>
 </head>
 <body>
     <div class="banner">
@@ -24,6 +45,31 @@
             <h3>Archive</h3>
             <div id="random-archive"></div>
         </div>
+    </div>
+</body>
+</html>
+
+/* display.html */
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poetry Archive - Display</title>
+    <style>
+        body { font-family: serif; background-color: white; color: black; }
+        .banner { display: flex; justify-content: space-between; padding: 10px; background: lightgray; }
+        .search-bar { margin-left: auto; }
+        .content { padding: 20px; }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <a href="index.html">Home</a> | <a href="display.html">Display</a> | <a href="archive.html">Archive</a>
+        <input type="text" class="search-bar" placeholder="Search...">
+    </div>
+    <div class="content">
+        <h2 id="poem-title">Poem Title</h2>
+        <p id="poem-date">Poem Date</p>
+        <p id="poem-content">Poem Content</p>
     </div>
 </body>
 </html>
