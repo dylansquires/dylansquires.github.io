@@ -1,4 +1,3 @@
-/* archive.html */
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +12,13 @@
     </style>
     <script>
         async function loadArchive() {
-            const response = await fetch('archive.csv');
+            const response = await fetch('archive.tsv');
             const data = await response.text();
             const rows = data.split('\n').slice(1);
             
             let tableHTML = '';
             rows.forEach(row => {
-                const [date, title, content, type] = row.split(',');
+                const [date, title, content, type] = row.split('\t');
                 tableHTML += `<tr><td>${date}</td><td>${title}</td><td>${type}</td></tr>`;
             });
             document.getElementById('archive-entries').innerHTML = tableHTML;
