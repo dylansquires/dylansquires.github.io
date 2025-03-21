@@ -1,29 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Poetry Archive - Display</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poem Display</title>
     <style>
-        body { font-family: serif; background-color: white; color: black; }
-        .banner { display: flex; justify-content: space-between; padding: 10px; background: lightgray; }
-        .search-bar { margin-left: auto; }
-        .content { padding: 20px; }
-    </style>
-    <script>
-        function loadPoem() {
-            const urlParams = new URLSearchParams(window.location.search);
-            document.getElementById('poem-title').textContent = urlParams.get('title');
-            document.getElementById('poem-date').textContent = urlParams.get('date');
+        body {
+            font-family: serif;
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
         }
-        window.onload = loadPoem;
-    </script>
+        .banner {
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            border-bottom: 2px solid black;
+        }
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .poem-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .poem-author {
+            font-size: 18px;
+            color: gray;
+            margin-bottom: 20px;
+        }
+        .poem-content {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid black;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <div class="banner">
-        <a href="index.html">Home</a> | <a href="archive.html">Archive</a>
+        <a href="index.html">Home</a> | <a href="archive.html">Archive</a> | <a href="display.html">Poems</a>
     </div>
+    
     <div class="content">
-        <h2 id="poem-title"></h2>
-        <p id="poem-date"></p>
+        <div class="poem-title">#EndHungerUK</div>
+        <div class="poem-author">by Carol Chen</div>
+        <div class="poem-content">
+            <p>She sits before an empty table, her eyes empty and sad.<br>
+            Will the food ever arrive? She's waiting for her Dad.<br>
+            In the room next door a young girl cries.<br>
+            <em>'I don’t want my greens! I just want to eat fries!'</em><br>
+            She doesn’t have the energy to give her Dad a hug,<br>
+            He returned empty-handed, doesn’t even have a mug.<br>
+            <em>'Drink your hot chocolate! Don’t spill it on the floor!'</em><br>
+            It’s hard to believe they just live next door.</p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        © 2025 Your Website Name. All rights reserved.
     </div>
 </body>
 </html>
