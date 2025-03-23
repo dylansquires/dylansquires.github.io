@@ -1,0 +1,26 @@
+baseURL = 'https://poemsbydylan.org/'
+languageCode = 'en-us'
+title = 'Poems by Dylan'
+theme = 'typo'
+
+[params]
+homeIntroTitle = 'Welcome to the Archive'
+
+homeIntroContent = """
+Poems written by a structural engineer.
+
+Thank you for stopping by, happy reading.  
+"""
+
+listDateFormat = '2 Jan 2006'
+
+paginationSize = 50
+
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "posts"
+url = "/posts"
+
