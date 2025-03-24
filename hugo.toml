@@ -24,3 +24,6 @@ url = "/"
 name = "posts"
 url = "/posts"
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
