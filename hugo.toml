@@ -4,12 +4,12 @@ title = 'Poems by Dylan'
 theme = 'typo'
 
 [params]
-homeIntroTitle = 'Welcome to the Archive'
+homeIntroTitle = 'Welcome to my Archive'
 
 homeIntroContent = """
-Poems written by a structural engineer.
+Poems written by me, Dylan.
 
-Thank you for stopping by, happy reading.  
+Thank you for stopping by. Happy reading.  
 """
 
 listDateFormat = '2 Jan 2006'
