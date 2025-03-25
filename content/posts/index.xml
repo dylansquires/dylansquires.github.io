@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Poems by Dylan</title>
+    <link>https://dylansquires.github.io/posts/</link>
+    <description>Latest poems from Dylan</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Mar 2025 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Resistance Factor</title>
+      <link>https://dylansquires.github.io/posts/resistancefactor/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 GMT</pubDate>
+      <description>A poem by Dylan</description>
+    </item>
+    <item>
+      <title>I Read a Poem</title>
+      <link>https://dylansquires.github.io/posts/ireadapoem/i-read-a-poem/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 GMT</pubDate>
+      <description>A poem by Dylan</description>
+    </item>
+    <item>
+      <title>Mortar</title>
+      <link>https://dylansquires.github.io/posts/mortar/mortar/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 GMT</pubDate>
+      <description>A poem by Dylan</description>
+    </item>
+    <item>
+      <title>Our George</title>
+      <link>https://dylansquires.github.io/posts/ourgeorge/our-george/</link>
+      <pubDate>Sun, 24 Feb 2025 00:00:00 GMT</pubDate>
+      <description>A poem by Dylan</description>
+    </item>
+    <item>
+      <title>Tea and Scones</title>
+      <link>https://dylansquires.github.io/posts/teaandscones/tea-and-scones/</link>
+      <pubDate>Sat, 23 Feb 2025 00:00:00 GMT</pubDate>
+      <description>A poem by Dylan</description>
+    </item>
+  </channel>
+</rss>

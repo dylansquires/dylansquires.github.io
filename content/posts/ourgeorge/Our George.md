@@ -100,7 +100,7 @@ The dragon hastens to guard his plunder\
 And before he can fire\
 Nor beg for salvation\
 Their swords strike the dragon's heart\
-From the treasure each worker now take their rightful part\
+From the treasure each worker now takes their rightful part\
 And departs this dragon-lair\
 In search of a pub to drink till dark\
 This solstice eve the beer garden\
