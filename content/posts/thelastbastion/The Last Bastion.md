@@ -1,6 +1,6 @@
 +++
-date: '2025-04-01'
-title: 'The Last Bastion'
+date = '2025-04-01'
+title = 'The Last Bastion'
 +++
 
 A bloke outside the toilets of Wembley/
