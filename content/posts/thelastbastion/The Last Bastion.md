@@ -43,7 +43,7 @@ So off he went and saw Big Ben\
 Head it in from outside the box\
 Then go on to win it with a last minute pen\
 And in the cheers he found the last bastion\
-Of British community.\
+Of Albion community.\
 \
 by Dylan
 
